@@ -8,74 +8,61 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <div class="container">
-      <div class="cyber-frame">
-        <h2 class="title">Sistema Multi-Agentes IA</h2>
+      <div class="content">
+        <h1 class="title">Sistema de Inteligencia Empresarial</h1>
+        <p class="subtitle">Seleccione el módulo de análisis que desea utilizar</p>
         
         <div class="agents-grid">
-          <button class="agent-button main-agent" (click)="navigateToDataLoad()">
-            <div class="button-content">
-              <span class="icon">🤖</span>
-              <span>Elegir varios Agentes</span>
-            </div>
+          <button class="agent-card primary" (click)="navigateToDataLoad()">
+            <span class="icon">⚡</span>
+            <h3>Análisis Completo</h3>
+            <p>Evaluación integral del negocio</p>
           </button>
           
-          <button class="agent-button" (click)="navigateToDataLoad()">
-            <div class="button-content">
-              <span class="icon">📈</span>
-              <span>Predicción de ventas</span>
-            </div>
+          <button class="agent-card" (click)="navigateToDataLoad()">
+            <span class="icon">📈</span>
+            <h3>Ventas</h3>
+            <p>Predicción y análisis de ventas</p>
           </button>
           
-          <button class="agent-button" (click)="navigateToDataLoad()">
-            <div class="button-content">
-              <span class="icon">⭐</span>
-              <span>Correlación de calidad</span>
-            </div>
+          <button class="agent-card" (click)="navigateToDataLoad()">
+            <span class="icon">🎯</span>
+            <h3>Calidad</h3>
+            <p>Métricas de calidad y mejoras</p>
           </button>
           
-          <button class="agent-button" (click)="navigateToDataLoad()">
-            <div class="button-content">
-              <span class="icon">🏭</span>
-              <span>Predicción de producción</span>
-            </div>
+          <button class="agent-card" (click)="navigateToDataLoad()">
+            <span class="icon">🏭</span>
+            <h3>Producción</h3>
+            <p>Optimización de producción</p>
           </button>
           
-          <button class="agent-button" (click)="navigateToDataLoad()">
-            <div class="button-content">
-              <span class="icon">🔧</span>
-              <span>Gestión de mantenimiento</span>
-            </div>
+          <button class="agent-card" (click)="navigateToDataLoad()">
+            <span class="icon">⚙️</span>
+            <h3>Mantenimiento</h3>
+            <p>Gestión predictiva</p>
           </button>
           
-          <button class="agent-button" (click)="navigateToDataLoad()">
-            <div class="button-content">
-              <span class="icon">🛒</span>
-              <span>Predicción de compras</span>
-            </div>
+          <button class="agent-card" (click)="navigateToDataLoad()">
+            <span class="icon">📊</span>
+            <h3>Compras</h3>
+            <p>Análisis de adquisiciones</p>
           </button>
           
-          <button class="agent-button" (click)="navigateToDataLoad()">
-            <div class="button-content">
-              <span class="icon">📦</span>
-              <span>Gestión de inventario</span>
-            </div>
-          </button>
-          
-          <button class="agent-button main-agent" (click)="navigateToDataLoad()">
-            <div class="button-content">
-              <span class="icon">🌟</span>
-              <span>Todos los Agentes</span>
-            </div>
+          <button class="agent-card" (click)="navigateToDataLoad()">
+            <span class="icon">📦</span>
+            <h3>Inventario</h3>
+            <p>Control de stock inteligente</p>
           </button>
         </div>
       </div>
       
-      <div class="footer">
-        <div class="company-info">
-          <span class="company-name">Lyncros</span>
-          <span class="division">B.AI Automation</span>
+      <footer class="footer">
+        <div class="brand">
+          <span class="company">Lyncros</span>
+          <span class="division">Business Intelligence</span>
         </div>
-      </div>
+      </footer>
     </div>
   `,
   styles: [`
@@ -83,117 +70,122 @@ import { CommonModule } from '@angular/common';
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      position: relative;
-      overflow: hidden;
+      padding: 40px 20px;
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
-    .cyber-frame {
-      background: rgba(16, 24, 64, 0.8);
-      border: 2px solid rgba(0, 195, 255, 0.3);
-      border-radius: 15px;
-      padding: 40px;
-      box-shadow: 0 0 30px rgba(0, 195, 255, 0.2);
-      backdrop-filter: blur(10px);
-      max-width: 1200px;
-      width: 90%;
+    .content {
+      flex: 1;
+      animation: fadeIn 0.6s ease-out;
     }
 
     .title {
-      color: #00c3ff;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #1a237e;
+      margin-bottom: 0.5rem;
       text-align: center;
-      font-size: 2.5em;
-      margin-bottom: 40px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
+    }
+
+    .subtitle {
+      color: #546e7a;
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
     }
 
     .agents-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin: 40px 0;
-    }
-
-    .agent-button {
-      background: rgba(25, 35, 85, 0.8);
-      border: 1px solid rgba(0, 195, 255, 0.3);
-      border-radius: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
       padding: 20px;
-      color: #e0e0ff;
+    }
+
+    .agent-card {
+      background: white;
+      border: none;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: left;
       transition: all 0.3s ease;
-      min-height: 120px;
-    }
-
-    .agent-button:hover {
-      transform: translateY(-5px);
-      background: rgba(35, 45, 95, 0.9);
-      border-color: rgba(0, 195, 255, 0.8);
-      box-shadow: 0 0 20px rgba(0, 195, 255, 0.4);
-    }
-
-    .button-content {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 10px;
+      gap: 12px;
+      height: 100%;
+    }
+
+    .agent-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .agent-card.primary {
+      background: linear-gradient(135deg, #1a237e, #3949ab);
+      color: white;
+      grid-column: 1 / -1;
+    }
+
+    .agent-card.primary h3,
+    .agent-card.primary p {
+      color: white;
     }
 
     .icon {
-      font-size: 2em;
+      font-size: 2rem;
+      margin-bottom: 8px;
     }
 
-    .main-agent {
-      grid-column: 1 / -1;
-      background: linear-gradient(135deg, rgba(25, 35, 85, 0.9), rgba(45, 55, 105, 0.9));
-      animation: glow 2s infinite;
+    .agent-card h3 {
+      font-size: 1.25rem;
+      color: #1a237e;
+      margin: 0;
+    }
+
+    .agent-card p {
+      color: #546e7a;
+      font-size: 0.9rem;
+      margin: 0;
     }
 
     .footer {
-      position: fixed;
-      bottom: 20px;
-      display: flex;
-      gap: 20px;
-      background: rgba(16, 24, 64, 0.8);
-      padding: 15px 30px;
-      border-radius: 30px;
-      border: 1px solid rgba(0, 195, 255, 0.3);
+      margin-top: 40px;
+      text-align: center;
+      padding: 20px;
     }
 
-    .company-info {
-      display: flex;
+    .brand {
+      display: inline-flex;
       flex-direction: column;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
     }
 
-    .company-name {
-      color: #00c3ff;
-      font-size: 1.2em;
-      font-weight: bold;
-      letter-spacing: 1px;
+    .company {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1a237e;
     }
 
     .division {
-      color: #e0e0ff;
-      font-size: 0.9em;
-      opacity: 0.8;
+      font-size: 0.9rem;
+      color: #546e7a;
     }
 
     @media (max-width: 768px) {
-      .cyber-frame {
-        padding: 20px;
+      .container {
+        padding: 20px 10px;
       }
 
       .title {
-        font-size: 1.8em;
+        font-size: 2rem;
       }
 
       .agents-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 10px;
       }
     }
   `]
