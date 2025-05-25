@@ -8,96 +8,193 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <div class="container">
-      <h2>Multi Agentes de IA</h2>
-      
-      <div class="agents-circle">
-        <button class="agent-button top" (click)="navigateToDataLoad()">
-          Elegir varios Agentes
-        </button>
+      <div class="cyber-frame">
+        <h2 class="title">Sistema Multi-Agentes IA</h2>
         
-        <div class="agent-row">
-          <button class="agent-button left" (click)="navigateToDataLoad()">
-            Agente<br>Predicción de ventas
+        <div class="agents-grid">
+          <button class="agent-button main-agent" (click)="navigateToDataLoad()">
+            <div class="button-content">
+              <span class="icon">🤖</span>
+              <span>Elegir varios Agentes</span>
+            </div>
           </button>
-          <button class="agent-button right" (click)="navigateToDataLoad()">
-            Agente<br>Correlación de calidad
+          
+          <button class="agent-button" (click)="navigateToDataLoad()">
+            <div class="button-content">
+              <span class="icon">📈</span>
+              <span>Predicción de ventas</span>
+            </div>
+          </button>
+          
+          <button class="agent-button" (click)="navigateToDataLoad()">
+            <div class="button-content">
+              <span class="icon">⭐</span>
+              <span>Correlación de calidad</span>
+            </div>
+          </button>
+          
+          <button class="agent-button" (click)="navigateToDataLoad()">
+            <div class="button-content">
+              <span class="icon">🏭</span>
+              <span>Predicción de producción</span>
+            </div>
+          </button>
+          
+          <button class="agent-button" (click)="navigateToDataLoad()">
+            <div class="button-content">
+              <span class="icon">🔧</span>
+              <span>Gestión de mantenimiento</span>
+            </div>
+          </button>
+          
+          <button class="agent-button" (click)="navigateToDataLoad()">
+            <div class="button-content">
+              <span class="icon">🛒</span>
+              <span>Predicción de compras</span>
+            </div>
+          </button>
+          
+          <button class="agent-button" (click)="navigateToDataLoad()">
+            <div class="button-content">
+              <span class="icon">📦</span>
+              <span>Gestión de inventario</span>
+            </div>
+          </button>
+          
+          <button class="agent-button main-agent" (click)="navigateToDataLoad()">
+            <div class="button-content">
+              <span class="icon">🌟</span>
+              <span>Todos los Agentes</span>
+            </div>
           </button>
         </div>
-        
-        <div class="agent-row">
-          <button class="agent-button left" (click)="navigateToDataLoad()">
-            Agente<br>Predicción de producción
-          </button>
-          <button class="agent-button right" (click)="navigateToDataLoad()">
-            Agente<br>Gestión de mantenimiento
-          </button>
-        </div>
-        
-        <div class="agent-row">
-          <button class="agent-button left" (click)="navigateToDataLoad()">
-            Agente<br>Predicción de compras
-          </button>
-          <button class="agent-button right" (click)="navigateToDataLoad()">
-            Agente<br>Gestión de inventario
-          </button>
-        </div>
-        
-        <button class="agent-button bottom" (click)="navigateToDataLoad()">
-          Todos los Agentes
-        </button>
       </div>
       
       <div class="footer">
-        <span>Lyncros</span>
-        <span>B.AI Automation</span>
+        <div class="company-info">
+          <span class="company-name">Lyncros</span>
+          <span class="division">B.AI Automation</span>
+        </div>
       </div>
     </div>
   `,
   styles: [`
     .container {
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: #f5f5f5;
       padding: 20px;
+      position: relative;
+      overflow: hidden;
     }
-    
-    .agents-circle {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+
+    .cyber-frame {
+      background: rgba(16, 24, 64, 0.8);
+      border: 2px solid rgba(0, 195, 255, 0.3);
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 0 30px rgba(0, 195, 255, 0.2);
+      backdrop-filter: blur(10px);
+      max-width: 1200px;
+      width: 90%;
+    }
+
+    .title {
+      color: #00c3ff;
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
+    }
+
+    .agents-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
       margin: 40px 0;
     }
-    
-    .agent-row {
-      display: flex;
-      gap: 100px;
-    }
-    
+
     .agent-button {
-      padding: 15px 25px;
-      border-radius: 25px;
-      border: none;
-      background-color: #b8c1ec;
-      color: #232946;
-      cursor: pointer;
-      transition: transform 0.2s;
-      text-align: center;
+      background: rgba(25, 35, 85, 0.8);
+      border: 1px solid rgba(0, 195, 255, 0.3);
+      border-radius: 10px;
+      padding: 20px;
+      color: #e0e0ff;
+      transition: all 0.3s ease;
+      min-height: 120px;
     }
-    
+
     .agent-button:hover {
-      transform: scale(1.05);
-      background-color: #9ba5d9;
+      transform: translateY(-5px);
+      background: rgba(35, 45, 95, 0.9);
+      border-color: rgba(0, 195, 255, 0.8);
+      box-shadow: 0 0 20px rgba(0, 195, 255, 0.4);
     }
-    
+
+    .button-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon {
+      font-size: 2em;
+    }
+
+    .main-agent {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(25, 35, 85, 0.9), rgba(45, 55, 105, 0.9));
+      animation: glow 2s infinite;
+    }
+
     .footer {
-      margin-top: 40px;
+      position: fixed;
+      bottom: 20px;
       display: flex;
       gap: 20px;
-      color: #232946;
+      background: rgba(16, 24, 64, 0.8);
+      padding: 15px 30px;
+      border-radius: 30px;
+      border: 1px solid rgba(0, 195, 255, 0.3);
+    }
+
+    .company-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .company-name {
+      color: #00c3ff;
+      font-size: 1.2em;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .division {
+      color: #e0e0ff;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .cyber-frame {
+        padding: 20px;
+      }
+
+      .title {
+        font-size: 1.8em;
+      }
+
+      .agents-grid {
+        grid-template-columns: 1fr;
+      }
     }
   `]
 })
